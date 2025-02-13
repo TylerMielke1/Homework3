@@ -42,7 +42,7 @@ function demonstrateArrayChunk(): void {
 }
 
 function removeVowels($str): array|string|null {
-    return preg_replace('/[aeiouAEIOU]/', replacement: '', subject: $str);
+    return preg_replace(pattern: '/[aeiouAEIOU]/', replacement: '', subject: $str);
 }
 
 function fizzBuzz($n, $rules = [3 => 'Fizz', 5 => 'Buzz']): void {
@@ -65,7 +65,7 @@ echo "Numbers divisible by 2 or 3 up to 30: \n";
 echoDivisibleNumbers();
 
 echo "Valid string check: ";
-var_dump(value: validateString("A1!"));
+var_dump(value: validateString(str: "A1!"));
 
 echo "Array chunk example: ";
 demonstrateArrayChunk();
