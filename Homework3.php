@@ -50,4 +50,18 @@ function removeVowels($str) {
     return preg_replace('/[aeiouAEIOU]/', '', $str);
 }
 
+function fizzBuzz($n, $rules = [3 => 'Fizz', 5 => 'Buzz']) {
+    for ($i = 1; $i <= $n; $i++) {
+        $output = '';
+        foreach ($rules as $num => $word) {
+            if ($i % $num == 0) {
+                $output .= $word;
+            }
+        }
+        echo $output ?: $i;
+        echo "\n";
+    }
+}
+
+
 ?>
