@@ -11,5 +11,16 @@ function getEvenNumbers($n) {
     return $evens;
 }
 
+function echoDivisableNumbers() {
+    $i = 1;
+    while ( $i <= 30) {
+        if ( $i % 2 == 0 || $i % 3 == 0) {
+            echo "$i";
+        }
+        
+        $i++;
+    
+    }
 
+}
 ?>
