@@ -23,4 +23,22 @@ function echoDivisableNumbers() {
     }
 
 }
+
+function validatestring($str) {
+    $hasLetter = false;
+    $hasNumber = false;
+    $hasSpecial = false;
+
+    for  ($i = 0; $i < strlen($str); $i++) {
+        if (ctype_alpha($str[$i])) $hasLetter = true;
+        elseif (ctype_digit($str[$i])) $hasNumber = true;
+        else $hasSpecial = true;
+    
+    }
+
+return $hasLetter && $hasNumber && $hasSpecial;
+
+}
+
+
 ?>
