@@ -46,5 +46,8 @@ function demonstrateArrayChunk() {
     print_r($chunks);
 }
 
+function removeVowels($str) {
+    return preg_replace('/[aeiouAEIOU]/', '', $str);
+}
 
 ?>
