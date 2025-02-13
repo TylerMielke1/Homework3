@@ -3,54 +3,49 @@
 // Email: tmielke@genesee.edu
 // Description:
 
-function getEvenNumbers($n) {
+function getEvenNumbers($n): array {
     $evens = [];
-    for ($i = 2; $i <= $n; $i+= 2 ) {
+    for ($i = 2; $i <= $n; $i += 2) {
         $evens[] = $i;
     }
     return $evens;
 }
 
-function echoDivisableNumbers() {
+function echoDivisibleNumbers(): void {
     $i = 1;
-    while ( $i <= 30) {
-        if ( $i % 2 == 0 || $i % 3 == 0) {
-            echo "$i";
+    while ($i <= 30) {
+        if ($i % 2 == 0 || $i % 3 == 0) {
+            echo "$i ";
         }
-        
         $i++;
-    
     }
-
 }
 
-function validatestring($str) {
+function validateString($str): bool {
     $hasLetter = false;
     $hasNumber = false;
     $hasSpecial = false;
 
-    for  ($i = 0; $i < strlen($str); $i++) {
-        if (ctype_alpha($str[$i])) $hasLetter = true;
-        elseif (ctype_digit($str[$i])) $hasNumber = true;
+    for ($i = 0; $i < strlen(string: $str); $i++) {
+        if (ctype_alpha(text: $str[$i])) $hasLetter = true;
+        elseif (ctype_digit(text: $str[$i])) $hasNumber = true;
         else $hasSpecial = true;
-    
     }
 
-return $hasLetter && $hasNumber && $hasSpecial;
-
+    return $hasLetter && $hasNumber && $hasSpecial;
 }
 
-function demonstrateArrayChunk() {
+function demonstrateArrayChunk(): void {
     $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    $chunks = array_chunk($numbers,3);
-    print_r($chunks);
+    $chunks = array_chunk(array: $numbers, length: 3);
+    print_r(value: $chunks);
 }
 
-function removeVowels($str) {
-    return preg_replace('/[aeiouAEIOU]/', '', $str);
+function removeVowels($str): array|string|null {
+    return preg_replace('/[aeiouAEIOU]/', replacement: '', subject: $str);
 }
 
-function fizzBuzz($n, $rules = [3 => 'Fizz', 5 => 'Buzz']) {
+function fizzBuzz($n, $rules = [3 => 'Fizz', 5 => 'Buzz']): void {
     for ($i = 1; $i <= $n; $i++) {
         $output = '';
         foreach ($rules as $num => $word) {
@@ -63,5 +58,22 @@ function fizzBuzz($n, $rules = [3 => 'Fizz', 5 => 'Buzz']) {
     }
 }
 
+echo "Even numbers up to 10: ";
+print_r(value: getEvenNumbers(10));
 
+echo "Numbers divisible by 2 or 3 up to 30: \n";
+echoDivisibleNumbers();
+
+echo "Valid string check: ";
+var_dump(value: validateString("A1!"));
+
+echo "Array chunk example: ";
+demonstrateArrayChunk();
+
+echo "String without vowels: ";
+echo removeVowels(str: "Hello World!");
+
+echo "FizzBuzz up to 15: ";
+fizzBuzz(n: 15, rules: [3 => 'Fizz', 5 => 'Buzz', 7 => 'Mazz']);
 ?>
+
